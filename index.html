@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
     <title>Amigo Secreto</title>
 </head>
 
@@ -18,22 +19,29 @@
         </header>
         
         <section class="input-section">
-            <h2 class="section-title">Digite o nome dos seus amigos</h2>
+            <h2 id="mensagemSeuNome" class="section-title">Digite o seu nome</h2>
+            <div class="input-wrapper">
+                <input type="text" id="seuNome" class="input-name" placeholder="Digite seu nome">
+                <button class="button-add" onclick="adicionarSeuNome()">Adicionar</button>
+            </div>
+        
+            <h2 id="mensagemSorteio" class="section-title">Digite o nome dos seus amigos</h2>
             <div class="input-wrapper">
                 <input type="text" id="amigo" class="input-name" placeholder="Digite um nome">
                 <button class="button-add" onclick="adicionarAmigo()">Adicionar</button>
             </div>
-           
-            <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
-            <ul id="resultado" class="result-list" aria-live="polite"></ul>
-
+        
+            <ul id="listaAmigos" class="name-list"></ul>
+            <ul id="resultado" class="result-list"></ul>
+        
             <div class="button-container">
-                <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
+                <button class="button-draw" onclick="sortearAmigo()">
                     <img src="assets/play_circle_outline.png" alt="Ícone para sortear">
                     Sortear amigo
                 </button>
             </div>
         </section>
+        
     </main>
 
     <script src="app.js" defer></script>
